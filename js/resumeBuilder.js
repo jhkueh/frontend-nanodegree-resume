@@ -136,29 +136,9 @@ $("#header").append(formattedWelcomeMessage);
 
 $('#main').append(internationalizeButton);
 
-project.display = function() {
-	console.log('project.display()');
-	project.projects.forEach( function(elem) {
-		console.log('appeding to #projects');
-		$('#projects').append(HTMLprojectStart);
-		$('.project-entry:last').append(HTMLprojectTitle.replace("%data%", elem.title));
-	});
-};
-
-project.display();
-
-if ( bio.skills.length > 0 ) {
-	$("#header").append(HTMLskillsStart);
-	
-	console.log("There's skills in bio.");
-	bio.skills.forEach( function(elem) {
-		$("#skills").append( HTMLskills.replace("%data%", elem) );
-		console.log("element: " + elem);
-	});
-	
-}
 
 function displayWork() {
+  console.log('displayWork()');
   work.jobs.forEach(function(job) {
     $("#workExperience").append(HTMLworkStart);
     
@@ -176,7 +156,28 @@ function displayWork() {
   });
 }
 
+function displayProject() {
+	console.log('displayProject()');
+	project.projects.forEach( function(elem) {
+		console.log('appeding to #projects');
+		$('#projects').append(HTMLprojectStart);
+		$('.project-entry:last').append(HTMLprojectTitle.replace("%data%", elem.title));
+	});
+};
+
+
 displayWork();
+displayProject();
+
+if ( bio.skills.length > 0 ) {
+	$("#header").append(HTMLskillsStart);
+	
+	console.log("There's skills in bio.");
+	bio.skills.forEach( function(elem) {
+		$("#skills").append( HTMLskills.replace("%data%", elem) );
+		console.log("element: " + elem);
+	});
+}
 
 $(document).click(function(loc) {
   logClicks(loc.pageX, loc.pageY);
