@@ -101,10 +101,11 @@ var education = {
 
 function inName(name) {
 	name = name.trim().split(" ");
-	name[1] = name[1].toUpperCase();
+    size = name.length;
+	name[size-1] = name[size-1].toUpperCase();
 	name[0] = name[0][0] + name[0].slice(1).toLowerCase();
 	
-	return name;
+	return name.join(" ");
 }
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -138,33 +139,32 @@ $('#main').append(internationalizeButton);
 
 
 function displayWork() {
-  console.log('displayWork()');
-  work.jobs.forEach(function(job) {
-    $("#workExperience").append(HTMLworkStart);
-    
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", job.title);  
-    var formattedEmployerTitle = formattedEmployer + formattedTitle;
-    $(".work-entry:last").append(formattedEmployerTitle);
-    
-    var formattedDates = HTMLworkDates.replace("%data%", job.dates);    
-    $(".work-entry:last").append(formattedDates);
-    
-    var escapedDesc = job.description.replace('\n', '<br/>');
-    var formattedDesc = HTMLworkDescription.replace("%data%", escapedDesc);
-    $(".work-entry:last").append(formattedDesc);
-  });
+    console.log('displayWork()');
+    work.jobs.forEach(function(job) {
+        $("#workExperience").append(HTMLworkStart);
+
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
+        var formattedEmployerTitle = formattedEmployer + formattedTitle;
+        $(".work-entry:last").append(formattedEmployerTitle);
+
+        var formattedDates = HTMLworkDates.replace("%data%", job.dates);
+        $(".work-entry:last").append(formattedDates);
+
+        var escapedDesc = job.description.replace('\n', '<br/>');
+        var formattedDesc = HTMLworkDescription.replace("%data%", escapedDesc);
+        $(".work-entry:last").append(formattedDesc);
+    });
 }
 
 function displayProject() {
-	console.log('displayProject()');
-	project.projects.forEach( function(elem) {
-		console.log('appeding to #projects');
-		$('#projects').append(HTMLprojectStart);
-		$('.project-entry:last').append(HTMLprojectTitle.replace("%data%", elem.title));
-	});
-};
-
+    console.log('displayProject()');
+    project.projects.forEach(function(elem) {
+        console.log('appeding to #projects');
+        $('#projects').append(HTMLprojectStart);
+        $('.project-entry:last').append(HTMLprojectTitle.replace("%data%", elem.title));
+    });
+}
 
 displayWork();
 displayProject();
