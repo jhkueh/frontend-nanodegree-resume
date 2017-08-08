@@ -24,6 +24,13 @@ h6 {
   padding: 0 5%;
 }
 
+.project-entry img {
+  border: 1px solid #ccc;
+  margin: 5px;
+  padding: 5px;
+  width: 300px;
+}
+
 h1 {
   font-size: 40px;
   color: #f5a623;

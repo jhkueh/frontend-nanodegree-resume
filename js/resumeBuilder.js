@@ -22,14 +22,14 @@ var work = {
 			"title": "Customer Service & Web Developer",
 			"location": "Melbourne, Au",
 			"dates": "Nov 2014 - present",
-			"description": "> Handled and fulfilled clients MMS alerts orders.\n> Rebuilt company’s MMS web creation interface and reduced MMS creation time by 2-3X."
+			"description": "> Handled and fulfilled clients MMS alerts orders.;br;> Rebuilt company’s MMS web creation interface and reduced MMS creation time by 2-3X."
 		},
 		{
 			"employer": "JHKueh Web Artisan",
 			"title": "Freelance Web Developer",
 			"location": "Melbourne, Au",
 			"dates": "May 2015 - present",
-			"description": "> Helped clients to realise their dream website from conceptualisation to web hosting.\n> Portfolio:-\n>> GreatJourneyMigration.com.au\n>> BagsPlusMore.com.au"
+			"description": "> Helped clients to realise their dream website from conceptualisation to web hosting.;br;> Portfolio:-;br;>> GreatJourneyMigration.com.au;br;>> BagsPlusMore.com.au"
 		},
 		{
 			"employer": "MelbournePraiseCentre.org.au",
@@ -43,17 +43,31 @@ var work = {
 
 var project = {
 	"projects": [
-		{
-			"title": "Hello",
-			"dates": "",
-			"description": "",
-			"images": [" ", " "]
+        {
+			"title": "Where to Eat Lunch?",
+			"dates": "Jun 2017",
+			"description": "A random lunch place suggestion for Melbourne, Australia. Vue.js",
+			"images": ["https://s3-us-west-2.amazonaws.com/i.cdpn.io/455455.oWQqvB.80561aea-6ac7-4a00-825f-974b7abb8dd6.png"]
 		},
 		{
-			"title": "Project 2",
-			"dates": "",
-			"description": "",
-			"images": [" ", " "]
+			"title": "Linkubi's MMS/SMS CMS",
+			"dates": "May 2016 - May 2017",
+			"description": "Rebuilt a MMS/SMS content management system (CMS) that handles Melbourne Real Estate Agents' MMS/SMS Advisements which features:;br;> Drag & drop file upload;br;> Simple image manipulation;br;> Web data retrival system;br;> Reduced MMS creation time by 2-3X",
+			"images": ["https://www.dropbox.com/s/zd4wmsxyz6vtwd4/linkubi_thumbnail1.jpg?raw=1",
+            "https://www.dropbox.com/s/4d4fqehvmornwvr/linkubi_thumbnail2.jpg?raw=1",
+            "https://www.dropbox.com/s/q4l6wcoy7pjpsgc/linkubi_thumbnail3.jpg?raw=1"]
+		},
+        {
+			"title": "Great Journey Migration",
+			"dates": "2015 - 2016",
+			"description": "A simple website for a small Migration Agent Agency.;br;Built with:-;br;Frontend: Foundation & various JS libraries.;br;Backend: Laravel (PHP)",
+			"images": ["https://www.dropbox.com/s/0c6o5v90u04eqdp/gjm_thumbnail.jpg?raw=1"]
+		},
+        {
+			"title": "Pomodoro Clock",
+			"dates": "Jan 2016",
+			"description": "A Vue.js Pomodoro Clock.;br;Built with:-;br;Frontend: Foundation & Vue.js.;br;Backend: —",
+			"images": ["https://www.dropbox.com/s/e506tv4519gja9r/pomo_clock_thumbnail.png?raw=1"]
 		}
 	]
 };
@@ -105,7 +119,7 @@ function inName(name) {
 	name[size-1] = name[size-1].toUpperCase();
 	name[0] = name[0][0] + name[0].slice(1).toLowerCase();
 	
-	return name.join(" ");
+	return name.join(' ');
 }
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -151,23 +165,32 @@ function displayWork() {
         var formattedDates = HTMLworkDates.replace("%data%", job.dates);
         $(".work-entry:last").append(formattedDates);
 
-        var escapedDesc = job.description.replace('\n', '<br/>');
+        var escapedDesc = job.description.replace(/;br;/g, '<br>');
         var formattedDesc = HTMLworkDescription.replace("%data%", escapedDesc);
         $(".work-entry:last").append(formattedDesc);
     });
 }
 
-function displayProject() {
+project.display = function() {
     console.log('displayProject()');
     project.projects.forEach(function(elem) {
         console.log('appeding to #projects');
         $('#projects').append(HTMLprojectStart);
         $('.project-entry:last').append(HTMLprojectTitle.replace("%data%", elem.title));
+        $('.project-entry:last').append(HTMLprojectDates.replace("%data%", elem.dates));
+        
+        var escapedDesc = elem.description.replace(/;br;/g, '<br>');
+        var formattedDesc = HTMLprojectDescription.replace("%data%", escapedDesc);
+        $('.project-entry:last').append(formattedDesc);
+        
+        elem.images.forEach(function(e) {
+            if (e) $('.project-entry:last').append(HTMLprojectImage.replace("%data%", e));
+        });        
     });
 }
 
 displayWork();
-displayProject();
+project.display();
 
 if ( bio.skills.length > 0 ) {
 	$("#header").append(HTMLskillsStart);
