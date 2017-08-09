@@ -20,8 +20,14 @@ h6 {
 
 .education-entry,
 .work-entry,
+.oCourse-entry,
 .project-entry {
   padding: 0 5%;
+  margin-bottom: 1.2rem;
+}
+
+.project-entry a.img {
+  display: inline;
 }
 
 .project-entry img {
