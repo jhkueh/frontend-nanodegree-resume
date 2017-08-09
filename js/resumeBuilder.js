@@ -47,7 +47,7 @@ var education = {
         {
 			"name": "Swinburne",
 			"location": "Melbourne, Victoria, Australia",
-			"degree": "Grad.Dip",
+			"degree": "Grad.Dip.Eng.",
 			"majors": ["Microelectronic"],
 			"dates": "2009 - Jun 2010",
 			"url": "http://www.swinburne.edu.au/"
@@ -55,7 +55,7 @@ var education = {
 		{
 			"name": "Swinburne",
 			"location": "Kuching, Sarawak, Malaysia",
-			"degree": "BEng",
+			"degree": "B.Eng.",
 			"majors": ["Robotics", "Electronics Design"],
 			"dates": "2005 - 2008",
 			"url": "http://www.swinburne.edu.au/"
