@@ -178,7 +178,7 @@ var project = {
 			"dates": "Jun 2017",
 			"description": "A random lunch place suggestion for Melbourne, Australia. Vue.js",
             "url": "https://codepen.io/jhkueh/debug/oWQqvB",
-			"images": ["https://s3-us-west-2.amazonaws.com/i.cdpn.io/455455.oWQqvB.80561aea-6ac7-4a00-825f-974b7abb8dd6.png"]
+			"images": ["https://www.dropbox.com/s/om1yh31q23vj4au/wtel_thumbnail.png?raw=1"]
 		},
 		{
 			"title": "Linkubi's MMS/SMS CMS",
