@@ -62,6 +62,18 @@ var education = {
 		}		
 	],
 	"onlineCourses": [
+        {
+			"title": "Object-Oriented JavaScript",
+			"school": "Udacity",
+			"dates": "Aug 2017",
+			"url": "https://www.udacity.com/course/object-oriented-javascript--ud015"
+		},
+        {
+			"title": "JavaScript Basics",
+			"school": "Udacity",
+			"dates": "Aug 2017",
+			"url": "https://www.udacity.com/course/javascript-basics--ud804"
+		},
 		{
 			"title": "Mobile Web Development: Building Mobile Web Experiences",
 			"school": "Udacity",
@@ -154,6 +166,13 @@ var work = {
 
 var project = {
 	"projects": [
+        {
+			"title": "Frogger Game",
+			"dates": "Aug 2017",
+			"description": "An arcade game built using JavaScript object-oriented design pattern.",
+            "url": "https://jhkueh.github.io/js-oo-arcade-game/",
+			"images": ["https://www.dropbox.com/s/0xxqmhlt76uqku3/frogger_game_thumbnail.gif?raw=1"]
+		},
         {
 			"title": "Where to Eat Lunch?",
 			"dates": "Jun 2017",
