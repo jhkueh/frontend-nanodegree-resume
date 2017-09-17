@@ -7,11 +7,11 @@ var bio = {
 		"github": "jhkueh",
 		"location": "Melbourne, Au"
 	},
-	"welcomeMessage": "When something is important enough, you do it even if the ods are not in your favor. --Elon Musk",
+	"welcomeMessage": "When something is important enough, you do it even if the odds are not in your favor. --Elon Musk",
 	"skills": ["PHP/Laravel", 
-						"Javascript: Vue.js, AngularJS, jQuery",
-						"CSS: Bootstrap, Foundation, Bulma",
-						"Misc: Git, Laradock, Laravel Homestead"],
+			   "Javascript: Vue.js, AngularJS, jQuery",
+			   "CSS: Bootstrap, Foundation, Bulma",
+			   "Misc: Git, Laradock, Laravel Homestead"],
     "bioPic": "images/profile.jpg",
     display: function() {
         console.log('bio.display()');
@@ -216,8 +216,8 @@ var project = {
             console.log('appeding to #projects');
             $('#projects').append(HTMLprojectStart);
             $('.project-entry:last').append(HTMLprojectTitle
-                                                        .replace("%data%", elem.title)
-                                                        .replace("%url%", elem.url));
+                                    .replace("%data%", elem.title)
+                                    .replace("%url%", elem.url));
             $('.project-entry:last').append(HTMLprojectDates.replace("%data%", elem.dates));
             
             var escapedDesc = elem.description.replace(/;br;/g, '<br>');
@@ -226,8 +226,8 @@ var project = {
             
             elem.images.forEach(function(e) {
                 if (e) $('.project-entry:last').append(HTMLprojectImageURL
-                                                                    .replace("%url%", e)
-                                                                    .replace("%data%", HTMLprojectImage.replace("%data%", e)));
+                                               .replace("%url%", e)
+                                               .replace("%data%", HTMLprojectImage.replace("%data%", e)));
             });
         });
     }
