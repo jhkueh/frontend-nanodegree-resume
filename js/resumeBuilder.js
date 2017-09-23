@@ -192,8 +192,8 @@ var project = {
 			"description": "Rebuilt a MMS/SMS content management system (CMS) that handles Melbourne Real Estate Agents' MMS/SMS Advisements which features:;br;> Drag & drop file upload;br;> Simple image manipulation;br;> Web data retrival system;br;> Reduced MMS creation time by 2-3X",
             "url": "http://new.linkubi.com.au/login",
 			"images": ["https://www.dropbox.com/s/zd4wmsxyz6vtwd4/linkubi_thumbnail1.jpg?raw=1",
-            "https://www.dropbox.com/s/4d4fqehvmornwvr/linkubi_thumbnail2.jpg?raw=1",
-            "https://www.dropbox.com/s/q4l6wcoy7pjpsgc/linkubi_thumbnail3.jpg?raw=1"]
+            "https://www.dropbox.com/s/e88wgo9gb1ab4wi/linkubi_thumbnail2.gif?raw=1",
+            "https://www.dropbox.com/s/1g6vk8aicdmqaoz/linkubi_thumbnail3.gif?raw=1"]
 		},
         {
 			"title": "Great Journey Migration",
